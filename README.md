@@ -19,7 +19,7 @@ https://livespins-poc.vercel.app/
 
 ## Backend
 
-There is an **endpoint** available for game search at https://livespins-exercise.vercel.app/api/search?search=megaways&page=1. If we pass and empty search string the endpoint returns all games paginated.
+There is an **endpoint** available for game search at https://livespins-poc.vercel.app/api/search?search=megaways&page=1. If we pass and empty search string the endpoint returns all games paginated.
 
 ## Folder Structure
 

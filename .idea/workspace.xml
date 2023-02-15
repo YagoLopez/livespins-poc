@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7651f392-9959-4575-bd8e-211c0e1ca6d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/save_temp_changes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/save_temp_changes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vid3.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/public/vid3.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/constants" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -105,11 +104,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yago\WebstormProjects\livespins-poc\public" />
       <recent name="C:\Users\Yago\WebstormProjects\livespins-poc\constants" />
       <recent name="C:\Users\Yago\WebstormProjects\livespins-exercise\public" />
       <recent name="C:\Users\Yago\WebstormProjects\livespins-exercise\components\icons" />
       <recent name="C:\Users\Yago\WebstormProjects\livespins-exercise\pages" />
-      <recent name="C:\Users\Yago\WebstormProjects\livespins-exercise\pages\api\lib\interfaces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yago\WebstormProjects\livespins-exercise\pages" />
@@ -174,20 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658997733680</updated>
-    </task>
-    <task id="LOCAL-00066" summary="refactor(lobby): minor refactors">
-      <created>1661541855319</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1661541855319</updated>
-    </task>
-    <task id="LOCAL-00067" summary="fix(lobby): disable eslint react display rule to avoid build err">
-      <created>1661542313788</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1661542313788</updated>
     </task>
     <task id="LOCAL-00068" summary="chore: remove dead code">
       <created>1661553076791</created>
@@ -518,7 +503,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676478747055</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Refactors">
+      <created>1676479285139</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1676479285139</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Update README.md">
+      <created>1676479464947</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1676479464947</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,8 +539,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix(gamecard): game tag styles" />
-    <MESSAGE value="fix(gamecard): add comment" />
     <MESSAGE value="fix(gamecard): loader" />
     <MESSAGE value="feat(gamedetail): add video component" />
     <MESSAGE value="feat(gamedetail): add tw-elements dependency" />
@@ -565,7 +562,9 @@
     <MESSAGE value="chore: fix typo in README.md" />
     <MESSAGE value="chore: changes in README.md" />
     <MESSAGE value="refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactors" />
+    <MESSAGE value="Refactors" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
 </project>
