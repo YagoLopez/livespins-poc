@@ -1,12 +1,19 @@
 import type { AppProps } from "next/app"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { QueryClient } from "@tanstack/react-query"
-import { REACT_QUERY_CONFIG } from "../constants"
 import { Provider } from "react-redux"
 import { store } from "../redux/store"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { useEffect } from "react"
 import "../styles/globals.css"
+
+const REACT_QUERY_CONFIG = {
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   // This is needed to import tailwind elements
