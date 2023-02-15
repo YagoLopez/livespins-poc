@@ -15,7 +15,7 @@ npm run build  # production build
 
 ## Demo
 
-https://livespins-exercise.vercel.app/
+https://livespins-poc.vercel.app/
 
 ## Backend
 
