@@ -1,4 +1,4 @@
-# Livespins Exercise By Yago López
+# Livespins Proof of Concept By Yago López
 
 ```bash
 npm run        # list available scripts

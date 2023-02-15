@@ -7,7 +7,6 @@
     <list default="true" id="7651f392-9959-4575-bd8e-211c0e1ca6d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vid3.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/public/vid3.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,20 +172,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658997733680</updated>
-    </task>
-    <task id="LOCAL-00068" summary="chore: remove dead code">
-      <created>1661553076791</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1661553076791</updated>
-    </task>
-    <task id="LOCAL-00069" summary="chore: remove unused dependencies">
-      <created>1661553720913</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1661553720913</updated>
     </task>
     <task id="LOCAL-00070" summary="refactor: minor">
       <created>1661597538354</created>
@@ -517,7 +502,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676479464947</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Trim vid3.mp4">
+      <created>1676481264153</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1676481264153</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Update README.md">
+      <created>1676481412420</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1676481412420</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +538,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix(gamecard): loader" />
     <MESSAGE value="feat(gamedetail): add video component" />
     <MESSAGE value="feat(gamedetail): add tw-elements dependency" />
     <MESSAGE value="refactor(gamedetail): content" />
@@ -563,6 +561,7 @@
     <MESSAGE value="chore: changes in README.md" />
     <MESSAGE value="refactors" />
     <MESSAGE value="Refactors" />
+    <MESSAGE value="Trim vid3.mp4" />
     <MESSAGE value="Update README.md" />
     <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
