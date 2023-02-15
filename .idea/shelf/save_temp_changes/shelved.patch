@@ -1,0 +1,68 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Livespins Exercise By Yago López\r\n\r\n```bash\r\nnpm run        # list available scripts\r\nnpm run dev    # run development server\r\nnpm run lint   # run linter\r\nnpm run build  # production build\r\n```\r\n\r\n## Install and run\r\n\r\n- Clone the repo\r\n- Run `npm intall`\r\n- Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.\r\n\r\n## Demo\r\n\r\nhttps://livespins-exercise.vercel.app/\r\n\r\n## Backend\r\n\r\nThere is an **endpoint** available for game search at https://livespins-exercise.vercel.app/api/search?search=megaways&page=1. If we pass and empty search string the endpoint returns all games paginated.\r\n\r\n## Folder Structure\r\n\r\n- `/pages`: page components\r\n- `/pages/api/search` search games endpoint\r\n- `/components`: it contains general components\r\n- `/redux`: state management files\r\n- `/public`: static assets\r\n- etc.\r\n\r\n## Tech Stack and Dependencies\r\n\r\n- React\r\n- Typescript\r\n- NextJS: server side rendering\r\n- React-Query: data fetching library\r\n- Redux Toolkit: state management\r\n- Search Array Library: to search data in JSON\r\n- Tailwind: CSS framework\r\n- Tw Elements: Tailwind components library\r\n\r\n## Architecture\r\n\r\n- **State Management**\r\n  - Asynchronous State Management: using React Query, asynch data coming from server is saved in a cache in the client\r\n  - Synchronous State Management\r\n    - When a user clicks and selects a game in the lobby, the game and the scrolled games are saved in Redux store\r\n    - When the user comes back from game detail page to game lobby the `scrolled games state is restored` and the `selected game is scrolled into viewport` . (To find this solution was the most difficult part of the exercise since ReactQuery caché was lost on route change)\r\n- **Separation of Concerns** by using a *Data Abstraction Layer* for decoupling frontend from backend. This is a trivial case but using interfaces and the repository pattern allows to decouple frontend and backend. Since frontend interacts with interfaces, just changing the interfaz implemetation allows to use a different data source. For instance we could use a MongoDB database for games data without changing frontend code. Just the implementation of the repository for the MongoDB connection\r\n- **Usage of Intersection Observer** for infinite scroll: when the user scrolls down and the bottom of the list appears into viewport the next page is loaded. We can achieve this defining an IntersectionObserver in a dom element at the bottom of the game list\r\n\r\n## Final Note\r\n\r\nI tried to be as exact as possible implementing the designs from Figma. In some cases I took as priority real screen size over figma size data\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 224d0654c2328e451263ab907c7f8759441c60f2)
++++ b/README.md	(date 1661808984112)
+@@ -11,7 +11,7 @@
+ 
+ - Clone the repo
+ - Run `npm intall`
+-- Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
++- Run `npm run dev` and Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ 
+ ## Demo
+ 
+@@ -44,13 +44,13 @@
+ ## Architecture
+ 
+ - **State Management**
+-  - Asynchronous State Management: using React Query, asynch data coming from server is saved in a cache in the client
++  - Asynchronous State Management using React Query. Asynch data coming from server is saved in a cache in the client
+   - Synchronous State Management
+-    - When a user clicks and selects a game in the lobby, the game and the scrolled games are saved in Redux store
+-    - When the user comes back from game detail page to game lobby the `scrolled games state is restored` and the `selected game is scrolled into viewport` . (To find this solution was the most difficult part of the exercise since ReactQuery caché was lost on route change)
+-- **Separation of Concerns** by using a *Data Abstraction Layer* for decoupling frontend from backend. This is a trivial case but using interfaces and the repository pattern allows to decouple frontend and backend. Since frontend interacts with interfaces, just changing the interfaz implemetation allows to use a different data source. For instance we could use a MongoDB database for games data without changing frontend code. Just the implementation of the repository for the MongoDB connection
+-- **Usage of Intersection Observer** for infinite scroll: when the user scrolls down and the bottom of the list appears into viewport the next page is loaded. We can achieve this defining an IntersectionObserver in a dom element at the bottom of the game list
++    - When a user clicks and selects a game in the lobby, the game and the scrolled games are saved into Redux store
++    - When the user comes back from game detail page to game lobby the `scrolled games state is restored` and the `selected game is scrolled into viewport` . (This was the most difficult part of the exercise since ReactQuery caché was lost on route change)
++- **Separation of Concerns**:*Data Abstraction Layer* for decoupling frontend from backend. Using interfaces and the repository pattern allows to decouple frontend and backend. Since frontend interacts with interfaces, just changing the interfaz implemetation allows to use a different data sources. For instance we could use a MongoDB database for games data without changing frontend code. Only the implementation of the repository for the MongoDB connection
++- **Usage of Intersection Observer** for infinite scroll. When the user scrolls down and the bottom of the list appears into viewport, the next page is loaded. We are able to achieve this by defining an IntersectionObserver in a dom element at the bottom of the game list
+ 
+ ## Final Note
+ 
+-I tried to be as exact as possible implementing the designs from Figma. In some cases I took as priority real screen size over figma size data
++I tried to be as exact as possible implementing the designs from Figma. In some cases I took as priority real screen size over figma dimensions data
+Index: pages/index.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import type { GetServerSideProps, NextPage } from \"next\"\r\nimport { GamesRepository } from \"./api/lib/repositories/games.repository\"\r\nimport { useRepository } from \"./api/lib/repositories/useRepository\"\r\nimport React, { useEffect, useRef, useState } from \"react\"\r\nimport Error from \"../components/Error\"\r\nimport Loader from \"../components/Loader\"\r\nimport { RootState, useAppDispatch } from \"../redux/store\"\r\nimport { useSelector } from \"react-redux\"\r\nimport GameList from \"../components/GameList\"\r\nimport InputSearch from \"../components/InputSearch\"\r\nimport { saveScrolledGames } from \"../redux/scrolledGamesSlice\"\r\nimport { IGame } from \"./api/lib/interfaces/IGame\"\r\nimport { InfiniteData } from \"@tanstack/query-core\"\r\n\r\nconst Lobby: NextPage = ({ search }: Record<string, string>) => {\r\n  const inputRef = useRef<HTMLInputElement>(null)\r\n  const loadMoreBtnRef = useRef<HTMLButtonElement>(null)\r\n  const gameListRef = useRef<HTMLDivElement>(null)\r\n  const selectedGame = useSelector((state: RootState) => state.game)\r\n  const scrolledGames = useSelector((state: RootState) => state.scrolledGames)\r\n  const [inputSearchState, setInputSearchState] = useState<string>(search)\r\n  const gamesRepository = new GamesRepository()\r\n  const { useSearchPaginated } = useRepository(gamesRepository)\r\n  const dispatch = useAppDispatch()\r\n\r\n  const getInitialData = () =>\r\n    scrolledGames?.pages?.length > 0 ? scrolledGames : undefined\r\n\r\n  const scrollIntoViewport = (selectedGame: IGame): void => {\r\n    const selectedGameDiv = document.getElementById(\r\n      selectedGame.id\r\n    ) as HTMLDivElement\r\n    selectedGameDiv?.scrollIntoView()\r\n  }\r\n\r\n  const {\r\n    data: gameList,\r\n    isLoading,\r\n    isError,\r\n    error,\r\n    fetchNextPage,\r\n    hasNextPage,\r\n    isFetchingNextPage,\r\n  } = useSearchPaginated(inputSearchState, getInitialData())\r\n\r\n  useEffect(() => {\r\n    if (inputRef.current) {\r\n      inputRef.current.value = search\r\n      setInputSearchState(search)\r\n    }\r\n  }, [search])\r\n\r\n  useEffect(() => {\r\n    dispatch(saveScrolledGames(gameList as InfiniteData<IGame[]>))\r\n  }, [gameList])\r\n\r\n  useEffect(() => {\r\n    scrollIntoViewport(selectedGame)\r\n    if (!hasNextPage) return\r\n    const observer = new IntersectionObserver(\r\n      (entries) =>\r\n        entries.forEach((entry) => entry.isIntersecting && fetchNextPage()),\r\n      {\r\n        root: null,\r\n      }\r\n    )\r\n    const loadMoreBtnElement = loadMoreBtnRef.current\r\n    if (!loadMoreBtnElement) return\r\n    observer.observe(loadMoreBtnElement)\r\n    return () => {\r\n      observer.disconnect()\r\n    }\r\n  }, [hasNextPage, fetchNextPage])\r\n\r\n  return (\r\n    <div className=\"bg-black-200 h-[100vh]\">\r\n      <div className=\"flex justify-center md:w-[1190px] md:mx-auto md:block\">\r\n        <img\r\n          src=\"livespins-logo.png\"\r\n          alt=\"Live Spins Logo\"\r\n          className=\"w-[300px] sm:mt-10 sm:mb-6 md:-ml-10\"\r\n        />\r\n      </div>\r\n      <InputSearch\r\n        ref={inputRef}\r\n        inputSearchState={inputSearchState}\r\n        setInputSearchState={setInputSearchState}\r\n        gameListRef={gameListRef}\r\n        classes=\"flex justify-center md:w-[1190px] md:mx-auto md:block\"\r\n      />\r\n\r\n      {isError && <Error error={error} />}\r\n\r\n      <>\r\n        {isLoading ? (\r\n          <Loader />\r\n        ) : (\r\n          <GameList\r\n            ref={gameListRef}\r\n            gameList={gameList}\r\n            inputSearchState={inputSearchState}\r\n            loadMoreBtnRef={loadMoreBtnRef}\r\n            hasNextPage={hasNextPage}\r\n            fetchNextPage={fetchNextPage}\r\n            isFetchingNextPage={isFetchingNextPage}\r\n            classes=\"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8\r\n                      md:gap-[40px] md:w-[1190px] h-[771px] overflow-auto m-auto mt-[56px]\"\r\n          />\r\n        )}\r\n      </>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Lobby\r\n\r\nexport const getServerSideProps: GetServerSideProps = async ({ query }) => {\r\n  // Get \"search\" parameter from browser query string\"\r\n  // And pass it to page component as prop\r\n  const { search } = query\r\n  return {\r\n    props: { search: !search ? \"\" : search },\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/index.tsx b/pages/index.tsx
+--- a/pages/index.tsx	(revision 224d0654c2328e451263ab907c7f8759441c60f2)
++++ b/pages/index.tsx	(date 1661809112846)
+@@ -11,6 +11,7 @@
+ import { saveScrolledGames } from "../redux/scrolledGamesSlice"
+ import { IGame } from "./api/lib/interfaces/IGame"
+ import { InfiniteData } from "@tanstack/query-core"
++import { Head } from "next/document"
+ 
+ const Lobby: NextPage = ({ search }: Record<string, string>) => {
+   const inputRef = useRef<HTMLInputElement>(null)
+@@ -74,6 +75,10 @@
+ 
+   return (
+     <div className="bg-black-200 h-[100vh]">
++      <Head>
++        <title>Live Spins Exercise. By Yago López</title>
++        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
++      </Head>
+       <div className="flex justify-center md:w-[1190px] md:mx-auto md:block">
+         <img
+           src="livespins-logo.png"

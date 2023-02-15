@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #18181D;
+}
+
+html, body, label {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.game-card-bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width: 400px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.game-card-bg:hover {
+    filter: saturate(400%);
+}
