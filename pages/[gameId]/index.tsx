@@ -21,22 +21,6 @@ const GameDetail = () => {
         <meta name="description" content="Game Detail" />
       </Head>
 
-      <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptionsFull"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptionsFull"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-      </div>
       <div className="carousel-inner relative w-full overflow-hidden h-screen">
         <div className="carousel-item active relative float-left w-full h-screen bg-no-repeat bg-cover bg-center">
           <video
@@ -46,7 +30,7 @@ const GameDetail = () => {
             muted
             loop
           >
-            <source className="" src="/vid3.mp4" type="video/mp4" />
+            <source className="" src="/vid4.mp4" type="video/mp4" />
           </video>
 
           <div
