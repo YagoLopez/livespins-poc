@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7651f392-9959-4575-bd8e-211c0e1ca6d6" name="Default Changelist" comment="feat: add game list loading indicator">
-      <change afterPath="$PROJECT_DIR$/components/GameCardContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/save_temp_changes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/save_temp_changes/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/HeadContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/HeadContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/InputSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/InputSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="7651f392-9959-4575-bd8e-211c0e1ca6d6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +170,7 @@
       <workItem from="1713945918140" duration="2936000" />
       <workItem from="1713967583384" duration="3083000" />
       <workItem from="1714394150785" duration="490000" />
-      <workItem from="1714394653905" duration="4695000" />
+      <workItem from="1714394653905" duration="5025000" />
     </task>
     <task id="LOCAL-00071" summary="temp">
       <created>1661604651595</created>
@@ -526,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676482638447</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
