@@ -8,7 +8,8 @@ const GameCardContainer = () => {
       height="233"
       viewBox="0 0 357 233"
       fill="none"
-      style="width: 100%;"
+      // @ts-ignore
+      style="width: 100%"
     >
       <g filter="url(#filter0_d_1310_582)">
         <rect x="8" y="8" width="349" height="220" rx="8" fill="#282831" />
@@ -16,6 +17,7 @@ const GameCardContainer = () => {
       <g clipPath="url(#clip0_1310_582)">
         <mask
           id="mask0_1310_582"
+          // @ts-ignore
           style="mask-type:alpha"
           maskUnits="userSpaceOnUse"
           x="8"
@@ -43,6 +45,7 @@ const GameCardContainer = () => {
         />
         <mask
           id="mask1_1310_582"
+          // @ts-ignore
           style="mask-type:alpha"
           maskUnits="userSpaceOnUse"
           x="-19"
