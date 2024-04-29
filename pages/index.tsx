@@ -37,12 +37,12 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
 
   const {
     data: gameList,
-    isLoading,
     isError,
     error,
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
+    isFetching,
   } = useSearchPaginated(inputSearchState, getInitialData())
 
   useEffect(() => {
@@ -90,24 +90,20 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
 
       {isError && <Error error={error} />}
 
-      <>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <GameList
-            ref={gameListRef}
-            gameList={gameList}
-            inputSearchState={inputSearchState}
-            loadMoreBtnRef={loadMoreBtnRef}
-            hasNextPage={hasNextPage}
-            fetchNextPage={fetchNextPage}
-            isFetchingNextPage={isFetchingNextPage}
-            classes="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
+      {isFetching && <Loader />}
+
+      <GameList
+        ref={gameListRef}
+        gameList={gameList}
+        inputSearchState={inputSearchState}
+        loadMoreBtnRef={loadMoreBtnRef}
+        hasNextPage={hasNextPage}
+        fetchNextPage={fetchNextPage}
+        isFetchingNextPage={isFetchingNextPage}
+        classes="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
                       md:gap-[40px] md:w-[1190px] h-[771px] overflow-y-auto
                       overflow-x-hidden m-auto mt-[56px]"
-          />
-        )}
-      </>
+      />
     </div>
   )
 }

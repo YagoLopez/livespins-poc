@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, forwardRef, RefObject } from "react"
+import React, { ChangeEvent, FormEvent, forwardRef, RefObject } from "react"
 import { useRouter } from "next/router"
 import SearchIcon from "./icons/SearchIcon"
 import ClearIcon from "./icons/ClearIcon"
