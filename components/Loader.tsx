@@ -1,6 +1,6 @@
 export default function Loader() {
   return (
-    <div className="flex justify-center w-full h-full text-white m-auto p-10">
+    <div className="flex justify-center w-full text-white absolute mt-[1rem] mb-[1rem]">
       Loading...
     </div>
   )
