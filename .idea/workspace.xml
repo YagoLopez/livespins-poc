@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7651f392-9959-4575-bd8e-211c0e1ca6d6" name="Default Changelist" comment="feat: add game list loading indicator">
-      <change afterPath="$PROJECT_DIR$/public/vid4.mp4" afterDir="false" />
+    <list default="true" id="7651f392-9959-4575-bd8e-211c0e1ca6d6" name="Default Changelist" comment="chore: ignore .idea dir">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/[gameId]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[gameId]/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +34,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="edit-first-video-in-game-detail-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -541,7 +540,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="refactor(gamedetail): content" />
     <MESSAGE value="refactor(gamedetail): add videos" />
     <MESSAGE value="refactor(gamedetail): code cleanup" />
     <MESSAGE value="chore(lobby): parse game type" />
@@ -565,6 +563,7 @@
     <MESSAGE value="Trim vid3.mp4" />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="temp game card with different colors" />
+    <MESSAGE value="temp2" />
     <MESSAGE value="feat: add game list loading indicator" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: add game list loading indicator" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
