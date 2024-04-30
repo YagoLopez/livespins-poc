@@ -4,4 +4,5 @@ export interface IGame {
   readonly tags: string[]
   readonly provider: string
   readonly gameType: string
+  image?: string
 }
