@@ -38,7 +38,7 @@ export default function GameCard({ game, searchString }: IGameCardProps) {
   return (
     <div id={id} onClick={onClickGame}>
       <div
-        style={{ backgroundImage: "url('/game-card-bg.svg')" }} // Here can be added dynamic background
+        style={{ backgroundImage: `url(${game.image})` }}
         className="game-card-bg relative px-9 py-[21px] h-[231px] md:h-[231px]
           hover:translate-y-[5px] hover:scale-x-[102%] transition duration-100 ease-out"
         title={name}
