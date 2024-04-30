@@ -20,7 +20,7 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
   const gameListRef = useRef<HTMLDivElement>(null)
   const selectedGame = useSelector((state: RootState) => state.game)
   const scrolledGames = useSelector((state: RootState) => state.scrolledGames)
-  const [inputSearchState, setInputSearchState] = useState<string>(search)
+  const [inputSearchState, setInputSearchState] = useState(search)
   const gamesRepository = new GamesRepository()
   const { useSearchPaginated } = useRepository(gamesRepository)
   const dispatch = useAppDispatch()

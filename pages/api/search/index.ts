@@ -26,7 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   try {
     if (search === "") {
-      const allGamesPaginated = paginator(allGames, Number(page))
+      const allGamesPaginated = paginator(allGames, Number(page), 3)
       res.status(200).json(allGamesPaginated)
     } else {
       const gamesFound = searchEngine.query(`'${search}'`)
