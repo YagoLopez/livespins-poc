@@ -46,9 +46,12 @@ const GameDetail = () => {
                 <div className="text-md mb-6">Provided by: {provider}</div>
                 <div className="md:space-x-2">
                   <button
+                    title="Back to games"
                     onClick={onGoBack}
                     type="button"
-                    className="inline-flex items-center px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    className="inline-flex items-center px-6 py-2 border-2 border-white text-white font-medium text-xs
+                      leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none
+                      focus:ring-0 transition duration-150 ease-in-out hover:shadow-lg hover:shadow-gray-500"
                     role="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
