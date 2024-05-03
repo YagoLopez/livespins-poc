@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import React from "react"
+import LeftArrowIcon from "../../components/icons/LeftArrowIcon"
 
 const GameDetail = () => {
   const router = useRouter()
@@ -12,7 +13,7 @@ const GameDetail = () => {
   return (
     <div
       id="carouselExampleCaptionsFull"
-      className="carousel slide carousel-fade relative h-screen"
+      className="fade-in carousel slide carousel-fade relative h-screen"
       data-bs-ride="carousel"
     >
       <Head>
@@ -47,12 +48,13 @@ const GameDetail = () => {
                   <button
                     onClick={onGoBack}
                     type="button"
-                    className="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    className="inline-flex items-center px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     role="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >
-                    Go Back To Games
+                    <LeftArrowIcon classes="left-btn" />
+                    Back To Games
                   </button>
                 </div>
               </div>
@@ -83,12 +85,13 @@ const GameDetail = () => {
                   <button
                     onClick={onGoBack}
                     type="button"
-                    className="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    className="inline-flex items-center px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     role="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >
-                    Go Back To Games
+                    <LeftArrowIcon classes="left-btn" />
+                    Back To Games
                   </button>
                 </div>
               </div>

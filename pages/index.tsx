@@ -112,12 +112,12 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
           hasNextPage={hasNextPage}
           fetchNextPage={fetchNextPage}
           isFetchingNextPage={isFetchingNextPage}
-          classes="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
+          classes="fade-in grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
                       md:gap-[40px] md:w-[1190px] h-[771px] overflow-y-auto
                       overflow-x-hidden m-auto mt-[56px]"
         />
       </div>
-      {gameListScroll > 0 && (
+      {gameListScroll > 10 && (
         <div
           className="fav-btn"
           title="Scroll to top"
