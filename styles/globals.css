@@ -23,3 +23,52 @@ html, body, label {
 .game-card-bg:hover {
     filter: saturate(400%);
 }
+
+.fav-btn {
+    fill: aliceblue;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: cornflowerblue;
+    position: fixed;
+    right: 30px;
+    bottom: 15px;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: white 0 0 10px;
+}
+
+.fav-btn:hover {
+    transition: 300ms;
+    border-radius: 20%;
+    box-shadow: white 0 0 10px;
+}
+
+.left-btn {
+    width: 15px;
+    height: 30px;
+    fill: white;
+    margin-right: 5px;
+}
+
+.fade-in {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

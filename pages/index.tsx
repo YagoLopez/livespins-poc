@@ -13,6 +13,7 @@ import { IGame } from "./api/lib/interfaces/IGame"
 import { InfiniteData } from "@tanstack/query-core"
 import HeadContent from "../components/HeadContent"
 import Logo from "../components/Logo"
+import UpArrowIcon from "../components/icons/UpArrowIcon"
 
 const Lobby: NextPage = ({ search }: Record<string, string>) => {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -24,6 +25,7 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
   const gamesRepository = new GamesRepository()
   const { useSearchPaginated } = useRepository(gamesRepository)
   const dispatch = useAppDispatch()
+  const [gameListScroll, setGameListScroll] = useState(0)
 
   const getInitialData = () =>
     scrolledGames?.pages?.length > 0 ? scrolledGames : undefined
@@ -33,6 +35,11 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
       selectedGame.id
     ) as HTMLDivElement
     selectedGameDiv?.scrollIntoView()
+  }
+
+  const onClickUpArrowIcon = () => {
+    gameListRef.current?.scrollTo(0, 0)
+    window.scrollTo(0, 0)
   }
 
   const {
@@ -74,37 +81,52 @@ const Lobby: NextPage = ({ search }: Record<string, string>) => {
     }
   }, [hasNextPage, fetchNextPage])
 
+  gameListRef.current?.addEventListener("scroll", () => {
+    setGameListScroll(gameListRef.current?.scrollTop || 0)
+  })
+
   return (
-    <div className="bg-black-200 h-[100vh]">
-      <HeadContent />
+    <>
+      <div className="bg-black-200 h-[100vh]">
+        <HeadContent />
 
-      <Logo classes="flex justify-center md:w-[1190px] md:mx-auto md:block" />
+        <Logo classes="flex justify-center md:w-[1190px] md:mx-auto md:block" />
 
-      <InputSearch
-        ref={inputRef}
-        inputSearchState={inputSearchState}
-        setInputSearchState={setInputSearchState}
-        gameListRef={gameListRef}
-        classes="flex justify-center md:w-[1190px] md:mx-auto md:block"
-      />
+        <InputSearch
+          ref={inputRef}
+          inputSearchState={inputSearchState}
+          setInputSearchState={setInputSearchState}
+          gameListRef={gameListRef}
+          classes="flex justify-center md:w-[1190px] md:mx-auto md:block"
+        />
 
-      {isError && <Error error={error} />}
+        {isError && <Error error={error} />}
 
-      {isFetching && <Loader />}
+        {isFetching && <Loader />}
 
-      <GameList
-        ref={gameListRef}
-        gameList={gameList}
-        inputSearchState={inputSearchState}
-        loadMoreBtnRef={loadMoreBtnRef}
-        hasNextPage={hasNextPage}
-        fetchNextPage={fetchNextPage}
-        isFetchingNextPage={isFetchingNextPage}
-        classes="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
+        <GameList
+          ref={gameListRef}
+          gameList={gameList}
+          inputSearchState={inputSearchState}
+          loadMoreBtnRef={loadMoreBtnRef}
+          hasNextPage={hasNextPage}
+          fetchNextPage={fetchNextPage}
+          isFetchingNextPage={isFetchingNextPage}
+          classes="fade-in grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8
                       md:gap-[40px] md:w-[1190px] h-[771px] overflow-y-auto
                       overflow-x-hidden m-auto mt-[56px]"
-      />
-    </div>
+        />
+      </div>
+      {gameListScroll > 10 && (
+        <div
+          className="fav-btn"
+          title="Scroll to top"
+          onClick={onClickUpArrowIcon}
+        >
+          <UpArrowIcon />
+        </div>
+      )}
+    </>
   )
 }
 
