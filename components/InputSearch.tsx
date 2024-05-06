@@ -60,7 +60,7 @@ const InputSearch = forwardRef(
               autoComplete="off"
               className="block p-[11px] pl-12 w-full text-md text-black bg-gray-50
               rounded-lg border border-gray-300"
-              placeholder="Search (eg. Poker, Slots, Blackjack)"
+              placeholder="Search Game (eg. Poker, Slots, Blackjack)"
             />
             <div
               className="flex absolute inset-y-0 left-0 items-center
