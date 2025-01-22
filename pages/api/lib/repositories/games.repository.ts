@@ -10,15 +10,6 @@ export class GamesRepository implements IRepository<IGame> {
   readonly baseURL = "/api"
   readonly axiosClient = axios.create({ baseURL: this.baseURL })
 
-  private getData = async <T>(url: string): Promise<T> => {
-    try {
-      const { data } = await this.axiosClient.get(url)
-      return data
-    } catch (e: any) {
-      return e
-    }
-  }
-
   getById = (id: string, collection: IGame[]): IGame =>
     collection?.filter((game: IGame) => game.id === id)[0]
 

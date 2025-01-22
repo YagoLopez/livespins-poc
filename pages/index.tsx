@@ -15,7 +15,7 @@ import HeadContent from "../components/HeadContent"
 import Logo from "../components/Logo"
 import UpArrowIcon from "../components/icons/UpArrowIcon"
 
-const Lobby: NextPage = ({ search }: Record<string, string>) => {
+const Lobby: NextPage<{ search: string }> = ({ search }) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const loadMoreBtnRef = useRef<HTMLButtonElement>(null)
   const gameListRef = useRef<HTMLDivElement>(null)

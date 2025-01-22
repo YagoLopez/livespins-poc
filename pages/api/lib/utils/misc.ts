@@ -18,7 +18,7 @@ export const parseGameTags = (gameTags: string[]): string => {
 
 export const parseGameType = (gameType: string): string => {
   let res = ""
-  const splittedStringCopy = [...gameType.split("_")]
+  const splittedStringCopy = [...gameType?.split("_")]
   splittedStringCopy.forEach((str: string) => {
     str.charAt(0).toUpperCase()
     res += `${str.charAt(0).toUpperCase()}${str.slice(1)} `

@@ -25,6 +25,7 @@ const GameDetail = () => {
       <div className="carousel-inner relative w-full overflow-hidden h-screen">
         <div className="carousel-item active relative float-left w-full h-screen bg-no-repeat bg-cover bg-center">
           <video
+            data-testid="video"
             className="min-w-full min-h-full xl:min-w-0 xl:min-h-0"
             playsInline
             autoPlay
@@ -66,6 +67,7 @@ const GameDetail = () => {
         </div>
         <div className="carousel-item relative float-left w-full h-screen bg-no-repeat bg-cover bg-center">
           <video
+            data-testid="video"
             className="min-w-full min-h-full xl:min-w-0 xl:min-h-0"
             playsInline
             autoPlay

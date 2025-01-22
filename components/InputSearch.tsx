@@ -49,7 +49,11 @@ const InputSearch = forwardRef(
     }
 
     return (
-      <form onSubmit={(e) => onSearch(e)} className={classes}>
+      <form
+        name="search-form"
+        onSubmit={(e) => onSearch(e)}
+        className={classes}
+      >
         <label htmlFor="search">
           <div className="relative w-[350px] sm:w-[400px]">
             <input
