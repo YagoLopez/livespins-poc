@@ -5,6 +5,7 @@ npm run        # list available scripts
 npm run dev    # run development server
 npm run lint   # run linter
 npm run build  # production build
+npm run test   # run tests
 ```
 
 ## Install and run
