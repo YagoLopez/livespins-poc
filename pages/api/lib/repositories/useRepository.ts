@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import { useInfiniteQuery } from "@tanstack/react-query"
 import { IRepository } from "../interfaces/IRepository"
 
