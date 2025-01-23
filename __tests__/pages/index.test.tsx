@@ -42,17 +42,12 @@ describe("Lobby Component", () => {
     renderWithProviders(<Lobby search="" />)
     expect(screen.getByRole("textbox")).toBeInTheDocument()
   })
-
-  // it("updates search input value when search prop changes", async () => {
-  //   // const { rerender } = renderWithProviders(<Lobby search="" />)
-  //   renderWithProviders(<Lobby search="" />)
-  //   const searchInput = screen.getByRole("textbox")
-  //
-  //   // rerender(<Lobby search="new search" />)
-  //   await waitFor(() => {
-  //     expect(searchInput).toHaveValue("new search")
-  //   })
-  // })
+  it("updates search state when input value changes", () => {
+    renderWithProviders(<Lobby search="" />)
+    const searchInput = screen.getByRole("textbox")
+    fireEvent.change(searchInput, { target: { value: "test" } })
+    expect(searchInput).toHaveValue("test")
+  })
 
   it("shows loading state", async () => {
     renderWithProviders(<Lobby search="" />)
@@ -65,21 +60,6 @@ describe("Lobby Component", () => {
       })
     }
   })
-
-  // it("scrolls to top when up arrow button is clicked", async () => {
-  //   renderWithProviders(<Lobby search="" />)
-  //   const gameList = document.querySelector(".overflow-y-auto")
-  //
-  //   if (gameList) {
-  //     fireEvent.scroll(gameList, { target: { scrollTop: 100 } })
-  //     const scrollButton = await screen.findByTitle("Scroll to top")
-  //
-  //     fireEvent.click(scrollButton)
-  //     await waitFor(() => {
-  //       expect(gameList.scrollTop).toBe(0)
-  //     })
-  //   }
-  // })
 
   it("handles server-side props correctly", async () => {
     const { getServerSideProps } = require("../../pages/index")
