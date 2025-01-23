@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737663756667" clover="3.2.0">
-  <project timestamp="1737663756668" name="All files">
-    <metrics statements="176" coveredstatements="164" conditionals="26" coveredconditionals="20" methods="42" coveredmethods="36" elements="244" coveredelements="220" complexity="0" loc="176" ncloc="176" packages="7" files="17" classes="17"/>
+<coverage generated="1737664496154" clover="3.2.0">
+  <project timestamp="1737664496154" name="All files">
+    <metrics statements="176" coveredstatements="166" conditionals="26" coveredconditionals="20" methods="42" coveredmethods="37" elements="244" coveredelements="223" complexity="0" loc="176" ncloc="176" packages="7" files="17" classes="17"/>
     <package name="components">
       <metrics statements="54" coveredstatements="54" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="16"/>
       <file name="Error.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\Error.tsx">
@@ -185,11 +185,11 @@
       </file>
     </package>
     <package name="pages.api.lib.utils">
-      <metrics statements="17" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="3"/>
+      <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
       <file name="misc.ts" path="C:\Users\Yago\WebstormProjects\livespins-poc\pages\api\lib\utils\misc.ts">
-        <metrics statements="17" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="3"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
+        <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
         <line num="5" count="18" type="stmt"/>
         <line num="6" count="18" type="stmt"/>
         <line num="7" count="18" type="stmt"/>
