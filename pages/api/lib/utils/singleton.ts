@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 export const SINGLETON_KEY = Symbol()
 
 export type Singleton<T extends new (...args: unknown[]) => unknown> = T & {
