@@ -50,5 +50,14 @@ There is an **endpoint** available for game search at https://livespins-poc.verc
   - Synchronous State Management
     - When a user clicks and selects a game in the lobby, the game and the scrolled games are saved into Redux store
     - When the user comes back from game detail page to games lobby the `scrolled games state is restored` and the `selected game is scrolled into viewport` . (This was the most difficult part of the exercise since ReactQuery caché was lost on route change)
-- **Separation of Concerns**: *Data Abstraction Layer* for decoupling frontend from backend. The usage of interfaces and the repository pattern allows to decouple frontend and backend. Since frontend interacts with interfaces, just changing the interfaz implemetation allows to use a different data source. For instance, we could use a MongoDB database for games data without changing frontend code. Only the implementation of the repository for the MongoDB connection. (Note: this case is very simple because there is no data modifications)
+
+- **Separation of Concerns**: *Data Abstraction Layer* for decoupling frontend from backend. The usage of interfaces and the repository pattern allows to decouple frontend and backend. Since frontend interacts with interfaces, just changing the interfaz implemetation allows to use a different data source. For instance, we could change to a MongoDB database for games data without changing frontend code. Only the implementation of the repository for the MongoDB connection.
+
+  In the project, there are two repositories:
+
+  - `GamesRepository`: get game data from a real endpoint
+  - `GamesRepositoryMock`: return mock game data
+
+  Since both repositories are implementations of same interface you can exchange them in the code or tests and the app won't brake since the interface contract is kept
+
 - **Usage of Intersection Observer for INFINITE SCROLL**. When the user scrolls down and the bottom of the list appears into viewport, the next page is loaded. We are able to achieve this by defining an IntersectionObserver on a DOM element at the bottom of the game list
