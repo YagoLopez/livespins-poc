@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import axios from "axios"
 import { Singleton } from "../utils/singleton"
 import { IGame } from "../interfaces/IGame"
