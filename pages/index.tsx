@@ -14,15 +14,18 @@ import { InfiniteData } from "@tanstack/query-core"
 import HeadContent from "../components/HeadContent"
 import Logo from "../components/Logo"
 import UpArrowIcon from "../components/icons/UpArrowIcon"
+import { IRepository } from "./api/lib/interfaces/IRepository"
 
-const Lobby: NextPage<{ search: string }> = ({ search }) => {
+const Lobby: NextPage<{
+  search: string
+  gamesRepository: IRepository<IGame>
+}> = ({ search, gamesRepository = new GamesRepository() }) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const loadMoreBtnRef = useRef<HTMLButtonElement>(null)
   const gameListRef = useRef<HTMLDivElement>(null)
   const selectedGame = useSelector((state: RootState) => state.game)
   const scrolledGames = useSelector((state: RootState) => state.scrolledGames)
   const [inputSearchState, setInputSearchState] = useState(search)
-  const gamesRepository = new GamesRepository()
   const { useSearchPaginated } = useRepository(gamesRepository)
   const dispatch = useAppDispatch()
   const [gameListScroll, setGameListScroll] = useState(0)

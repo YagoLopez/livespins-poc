@@ -18,7 +18,7 @@ export class GamesRepositoryMock implements IRepository<IGame> {
     }
   }
 
-  search({ searchString, pageParam }: ISearchParam): Promise<any> {
+  search(): Promise<any> {
     return Promise.resolve({
       page: 1,
       per_page: 10,

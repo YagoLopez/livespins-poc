@@ -19,7 +19,7 @@ const mockStore = configureStore({
 const renderWithProviders = (component: React.ReactNode) => {
   return render(
     <Provider store={mockStore}>
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         {component}
       </QueryClientProvider>
     </Provider>

@@ -1,3 +1,4 @@
+import React from "react"
 import { render, screen, fireEvent, waitFor } from "@testing-library/react"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
@@ -6,6 +7,9 @@ import Lobby from "../../pages/index"
 import gameReducer from "../../redux/gameSlice"
 import scrolledGamesReducer from "../../redux/scrolledGamesSlice"
 import "@testing-library/jest-dom"
+import { GamesRepositoryMock } from "../../pages/api/lib/repositories/games.repository.mock"
+
+const gamesRepository = new GamesRepositoryMock()
 
 const mockStore = configureStore({
   reducer: {
@@ -14,12 +18,10 @@ const mockStore = configureStore({
   },
 })
 
-const queryClient = new QueryClient()
-
 const renderWithProviders = (component: React.ReactNode) => {
   return render(
     <Provider store={mockStore}>
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         {component}
       </QueryClientProvider>
     </Provider>
@@ -39,18 +41,25 @@ describe("Lobby Component", () => {
   })
 
   it("renders initial state correctly", () => {
-    renderWithProviders(<Lobby search="" />)
+    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
     expect(screen.getByRole("textbox")).toBeInTheDocument()
   })
+
+  it("renders game list", async () => {
+    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
+    expect(await screen.findByText("Book of Gems Megaways")).toBeInTheDocument()
+    expect(await screen.findByText("The Last Kingdom")).toBeInTheDocument()
+  })
+
   it("updates search state when input value changes", () => {
-    renderWithProviders(<Lobby search="" />)
+    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
     const searchInput = screen.getByRole("textbox")
     fireEvent.change(searchInput, { target: { value: "test" } })
     expect(searchInput).toHaveValue("test")
   })
 
   it("shows loading state", async () => {
-    renderWithProviders(<Lobby search="" />)
+    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
     const gameList = document.querySelector(".overflow-y-auto")
 
     if (gameList) {
