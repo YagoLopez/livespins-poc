@@ -53,7 +53,7 @@ There is an **endpoint** available for game search at https://livespins-poc.verc
   - Asynchronous State Management using React Query. Async data coming from server is saved in a cache in the client
   - Synchronous State Management
     - When a user clicks and selects a game in the lobby, the game and the scrolled games are saved into Redux store
-    - When the user comes back from game detail page to games lobby the `scrolled games state is restored` and the `selected game is scrolled into viewport` . (This was the most difficult part of the exercise since ReactQuery caché was lost on route change)
+    - When the user comes back from game detail page to games lobby the `scrolled games state is restored` and the `selected game is scrolled into viewport`.
 
 - **Separation of Concerns**: *Data Abstraction Layer* for decoupling frontend from backend. The usage of interfaces and the repository pattern allows to decouple frontend and backend. Since frontend interacts with interfaces, just changing the interfaz implemetation allows to use a different data source. For instance, we could change to a MongoDB database for games data without changing frontend code. Only the implementation of the repository for the MongoDB connection.
 
