@@ -64,6 +64,6 @@ There is an **endpoint** available for game search at https://livespins-poc.verc
 
   Since both repositories are implementations of same interface you can exchange them in the code or tests and the app won't brake since the interface contract is kept
 
-- **Dependency Injection**: The <Lobby/> Page Component gets by prop an `IRepository`, so you can inject any implementation of the `IRepository`, that is, you can pass an instance of the`GamesRepository` or `GamesRepositoryMock` classes as dependency
+- **Dependency Injection**: The `<Lobby/>` Page Component gets by prop an `IRepository`, so you can inject any implementation of the `IRepository`, that is, you can pass an instance of the`GamesRepository` or `GamesRepositoryMock` classes as dependency
 
 - **Usage of Intersection Observer for INFINITE SCROLL**. When the user scrolls down and the bottom of the list appears into viewport, the next page is loaded. We are able to achieve this by defining an IntersectionObserver on a DOM element at the bottom of the game list
