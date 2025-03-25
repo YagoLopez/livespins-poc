@@ -1,5 +1,4 @@
 import { ISearchParam } from "./ISearchParam"
-import IPage from "./IPage"
 
 export interface IRepository<T> {
   readonly name: string
