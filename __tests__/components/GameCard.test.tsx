@@ -73,9 +73,9 @@ describe("GameCard", () => {
     const gameCard = screen.getByTitle(mockGame.name)
     fireEvent.click(gameCard)
 
-    // Verify correct query key is used
+    // Verify that the correct query key is used to fetch scrolled games data from React Query cache
     expect(mockGetQueryData).toHaveBeenCalledWith([
-      `games-search-${mockSearchString}`,
+      `games-search-${mockSearchString}`, // Query key used for fetching scrolled games
     ])
 
     expect(mockDispatch).toHaveBeenCalledWith(saveGame(mockGame))

@@ -6,9 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import Lobby from "../../pages/index"
 import gameReducer from "../../redux/gameSlice"
 import scrolledGamesReducer from "../../redux/scrolledGamesSlice"
-import "@testing-library/jest-dom"
 import { GamesRepositoryMock } from "../../pages/api/lib/repositories/games.repository.mock"
 import { IGame } from "../../pages/api/lib/interfaces/IGame"
+import "@testing-library/jest-dom"
 
 const gamesRepositoryMock = new GamesRepositoryMock()
 
@@ -39,9 +39,6 @@ const mockStore = configureStore({
 
 // Mock Element.scrollIntoView
 Element.prototype.scrollIntoView = jest.fn()
-
-// Mock window.scrollTo
-window.scrollTo = jest.fn()
 
 const renderWithProviders = (component: React.ReactNode) => {
   return render(
@@ -130,7 +127,7 @@ describe("Lobby Component", () => {
 
   it("scrolls selected game into viewport", () => {
     renderWithProviders(
-      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+      <Lobby search="poker" gamesRepository={gamesRepositoryMock} />
     )
 
     // The useEffect should trigger scrollIntoView
