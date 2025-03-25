@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1742921129894" clover="3.2.0">
-  <project timestamp="1742921129894" name="All files">
+<coverage generated="1742926703525" clover="3.2.0">
+  <project timestamp="1742926703525" name="All files">
     <metrics statements="175" coveredstatements="165" conditionals="27" coveredconditionals="20" methods="42" coveredmethods="37" elements="244" coveredelements="222" complexity="0" loc="175" ncloc="175" packages="7" files="17" classes="17"/>
     <package name="components">
       <metrics statements="54" coveredstatements="54" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="16"/>
@@ -84,7 +84,7 @@
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="ClearIcon.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\icons\ClearIcon.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
       </file>
       <file name="LeftArrowIcon.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\icons\LeftArrowIcon.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
