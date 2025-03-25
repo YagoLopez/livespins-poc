@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1742917891288" clover="3.2.0">
-  <project timestamp="1742917891288" name="All files">
-    <metrics statements="175" coveredstatements="165" conditionals="27" coveredconditionals="21" methods="42" coveredmethods="37" elements="244" coveredelements="223" complexity="0" loc="175" ncloc="175" packages="7" files="17" classes="17"/>
+<coverage generated="1742921129894" clover="3.2.0">
+  <project timestamp="1742921129894" name="All files">
+    <metrics statements="175" coveredstatements="165" conditionals="27" coveredconditionals="20" methods="42" coveredmethods="37" elements="244" coveredelements="222" complexity="0" loc="175" ncloc="175" packages="7" files="17" classes="17"/>
     <package name="components">
       <metrics statements="54" coveredstatements="54" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="16"/>
       <file name="Error.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\Error.tsx">
@@ -17,12 +17,12 @@
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
-        <line num="16" count="27" type="stmt"/>
-        <line num="17" count="27" type="stmt"/>
-        <line num="18" count="27" type="stmt"/>
-        <line num="19" count="27" type="stmt"/>
-        <line num="20" count="27" type="stmt"/>
-        <line num="22" count="27" type="stmt"/>
+        <line num="16" count="35" type="stmt"/>
+        <line num="17" count="35" type="stmt"/>
+        <line num="18" count="35" type="stmt"/>
+        <line num="19" count="35" type="stmt"/>
+        <line num="20" count="35" type="stmt"/>
+        <line num="22" count="35" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
         <line num="27" count="3" type="stmt"/>
         <line num="32" count="3" type="stmt"/>
@@ -33,15 +33,15 @@
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
-        <line num="32" count="9" type="stmt"/>
-        <line num="33" count="18" type="stmt"/>
+        <line num="32" count="15" type="stmt"/>
+        <line num="33" count="26" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="57" count="14" type="stmt"/>
+        <line num="57" count="18" type="stmt"/>
       </file>
       <file name="HeadContent.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\HeadContent.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="3" count="10" type="stmt"/>
+        <line num="3" count="14" type="stmt"/>
       </file>
       <file name="InputSearch.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\InputSearch.tsx">
         <metrics statements="24" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
@@ -50,41 +50,41 @@
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
-        <line num="23" count="11" type="stmt"/>
-        <line num="25" count="11" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="31" count="11" type="stmt"/>
+        <line num="31" count="15" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="41" count="11" type="stmt"/>
+        <line num="41" count="15" type="stmt"/>
         <line num="42" count="4" type="stmt"/>
         <line num="43" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="46" count="11" type="stmt"/>
+        <line num="46" count="15" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="93" count="12" type="stmt"/>
+        <line num="93" count="16" type="stmt"/>
       </file>
       <file name="Loader.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\Loader.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
+        <line num="1" count="8" type="stmt"/>
       </file>
       <file name="Logo.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\Logo.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="3" count="11" type="stmt"/>
+        <line num="3" count="15" type="stmt"/>
       </file>
     </package>
     <package name="components.icons">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="ClearIcon.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\icons\ClearIcon.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
       </file>
       <file name="LeftArrowIcon.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\icons\LeftArrowIcon.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -92,13 +92,13 @@
       </file>
       <file name="SearchIcon.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\components\icons\SearchIcon.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="19" count="11" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
       </file>
     </package>
     <package name="pages">
-      <metrics statements="54" coveredstatements="44" conditionals="16" coveredconditionals="10" methods="14" coveredmethods="9"/>
+      <metrics statements="54" coveredstatements="44" conditionals="16" coveredconditionals="9" methods="14" coveredmethods="9"/>
       <file name="index.tsx" path="C:\Users\Yago\WebstormProjects\livespins-poc\pages\index.tsx">
-        <metrics statements="54" coveredstatements="44" conditionals="16" coveredconditionals="10" methods="14" coveredmethods="9"/>
+        <metrics statements="54" coveredstatements="44" conditionals="16" coveredconditionals="9" methods="14" coveredmethods="9"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -113,33 +113,33 @@
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="22" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="23" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
-        <line num="26" count="8" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
-        <line num="28" count="7" type="stmt"/>
-        <line num="29" count="7" type="stmt"/>
-        <line num="30" count="7" type="stmt"/>
-        <line num="31" count="7" type="stmt"/>
-        <line num="33" count="7" type="stmt"/>
-        <line num="34" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="36" count="7" type="stmt"/>
-        <line num="37" count="5" type="stmt"/>
-        <line num="40" count="5" type="stmt"/>
-        <line num="43" count="7" type="stmt"/>
+        <line num="23" count="11" type="stmt"/>
+        <line num="24" count="11" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
+        <line num="28" count="11" type="stmt"/>
+        <line num="29" count="11" type="stmt"/>
+        <line num="30" count="11" type="stmt"/>
+        <line num="31" count="11" type="stmt"/>
+        <line num="33" count="11" type="stmt"/>
+        <line num="34" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="36" count="11" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="43" count="11" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="56" count="7" type="stmt"/>
-        <line num="58" count="7" type="stmt"/>
-        <line num="59" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="60" count="4" type="stmt"/>
-        <line num="61" count="4" type="stmt"/>
-        <line num="65" count="7" type="stmt"/>
-        <line num="66" count="5" type="stmt"/>
-        <line num="69" count="7" type="stmt"/>
-        <line num="70" count="5" type="stmt"/>
-        <line num="71" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="56" count="11" type="stmt"/>
+        <line num="58" count="11" type="stmt"/>
+        <line num="59" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="60" count="8" type="stmt"/>
+        <line num="61" count="8" type="stmt"/>
+        <line num="65" count="11" type="stmt"/>
+        <line num="66" count="9" type="stmt"/>
+        <line num="69" count="11" type="stmt"/>
+        <line num="70" count="8" type="stmt"/>
+        <line num="71" count="8" type="cond" truecount="1" falsecount="0"/>
         <line num="72" count="0" type="stmt"/>
         <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="79" count="0" type="stmt"/>
@@ -147,9 +147,9 @@
         <line num="81" count="0" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
         <line num="83" count="0" type="stmt"/>
-        <line num="87" count="7" type="stmt"/>
+        <line num="87" count="11" type="stmt"/>
         <line num="88" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="136" count="4" type="stmt"/>
+        <line num="136" count="8" type="stmt"/>
         <line num="138" count="2" type="stmt"/>
         <line num="141" count="2" type="stmt"/>
         <line num="142" count="2" type="stmt"/>
@@ -180,7 +180,7 @@
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="22" count="6" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
       </file>
     </package>
     <package name="pages.api.lib.utils">
@@ -189,21 +189,21 @@
         <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
         <line num="1" count="9" type="stmt"/>
         <line num="2" count="9" type="stmt"/>
-        <line num="5" count="30" type="stmt"/>
-        <line num="6" count="30" type="stmt"/>
-        <line num="7" count="30" type="stmt"/>
-        <line num="8" count="30" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="19" type="stmt"/>
-        <line num="10" count="19" type="stmt"/>
-        <line num="12" count="19" type="stmt"/>
+        <line num="5" count="38" type="stmt"/>
+        <line num="6" count="38" type="stmt"/>
+        <line num="7" count="38" type="stmt"/>
+        <line num="8" count="38" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="27" type="stmt"/>
+        <line num="10" count="27" type="stmt"/>
+        <line num="12" count="27" type="stmt"/>
         <line num="16" count="11" type="stmt"/>
-        <line num="19" count="27" type="stmt"/>
-        <line num="20" count="27" type="stmt"/>
-        <line num="21" count="27" type="stmt"/>
-        <line num="22" count="27" type="stmt"/>
-        <line num="23" count="35" type="stmt"/>
-        <line num="24" count="35" type="stmt"/>
-        <line num="26" count="27" type="stmt"/>
+        <line num="19" count="35" type="stmt"/>
+        <line num="20" count="35" type="stmt"/>
+        <line num="21" count="35" type="stmt"/>
+        <line num="22" count="35" type="stmt"/>
+        <line num="23" count="51" type="stmt"/>
+        <line num="24" count="51" type="stmt"/>
+        <line num="26" count="35" type="stmt"/>
       </file>
     </package>
     <package name="redux">
@@ -233,9 +233,9 @@
         <line num="1" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="22" count="10" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="22" count="14" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
         <line num="25" count="4" type="stmt"/>
       </file>
@@ -246,7 +246,7 @@
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
-        <line num="20" count="25" type="stmt"/>
+        <line num="20" count="37" type="stmt"/>
       </file>
     </package>
   </project>

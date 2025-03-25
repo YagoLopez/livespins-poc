@@ -8,15 +8,40 @@ import gameReducer from "../../redux/gameSlice"
 import scrolledGamesReducer from "../../redux/scrolledGamesSlice"
 import "@testing-library/jest-dom"
 import { GamesRepositoryMock } from "../../pages/api/lib/repositories/games.repository.mock"
+import { IGame } from "../../pages/api/lib/interfaces/IGame"
 
-const gamesRepository = new GamesRepositoryMock()
+const gamesRepositoryMock = new GamesRepositoryMock()
 
+// Mock game data
+const mockGame: IGame = {
+  id: "game1",
+  name: "Test Game",
+  gameType: "Slots",
+  provider: "Test Provider",
+  tags: ["tag1", "tag2"],
+  image: "test-image.jpg",
+}
+
+// Mock Redux store
 const mockStore = configureStore({
   reducer: {
     game: gameReducer,
     scrolledGames: scrolledGamesReducer,
   },
+  preloadedState: {
+    game: mockGame,
+    scrolledGames: {
+      pages: [[mockGame]],
+      pageParams: [null],
+    },
+  },
 })
+
+// Mock Element.scrollIntoView
+Element.prototype.scrollIntoView = jest.fn()
+
+// Mock window.scrollTo
+window.scrollTo = jest.fn()
 
 const renderWithProviders = (component: React.ReactNode) => {
   return render(
@@ -30,36 +55,45 @@ const renderWithProviders = (component: React.ReactNode) => {
 
 describe("Lobby Component", () => {
   beforeEach(() => {
-    // Reset intersection observer mock
-    const mockIntersectionObserver = jest.fn()
-    mockIntersectionObserver.mockReturnValue({
-      observe: () => null,
-      unobserve: () => null,
-      disconnect: () => null,
+    jest.clearAllMocks()
+
+    // Mock getElementById
+    document.getElementById = jest.fn().mockImplementation((id) => {
+      if (id === mockGame.id) {
+        return document.createElement("div")
+      }
+      return null
     })
-    window.IntersectionObserver = mockIntersectionObserver
   })
 
   it("renders initial state correctly", () => {
-    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
     expect(screen.getByRole("textbox")).toBeInTheDocument()
   })
 
   it("renders game list", async () => {
-    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
     expect(await screen.findByText("Book of Gems Megaways")).toBeInTheDocument()
     expect(await screen.findByText("The Last Kingdom")).toBeInTheDocument()
   })
 
   it("updates search state when input value changes", () => {
-    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
     const searchInput = screen.getByRole("textbox")
     fireEvent.change(searchInput, { target: { value: "test" } })
     expect(searchInput).toHaveValue("test")
   })
 
   it("shows loading state", async () => {
-    renderWithProviders(<Lobby search="" gamesRepository={gamesRepository} />)
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
     const gameList = document.querySelector(".overflow-y-auto")
 
     if (gameList) {
@@ -92,5 +126,49 @@ describe("Lobby Component", () => {
     expect(result).toEqual({
       props: { search: "" },
     })
+  })
+
+  it("scrolls selected game into viewport", () => {
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
+
+    // The useEffect should trigger scrollIntoView
+    expect(Element.prototype.scrollIntoView).toHaveBeenCalled()
+  })
+
+  it("renders loader when fetching data", () => {
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
+
+    expect(screen.getByText(/loading/i)).toBeInTheDocument()
+  })
+
+  it("initializes with search prop", () => {
+    renderWithProviders(
+      <Lobby search="test search" gamesRepository={gamesRepositoryMock} />
+    )
+
+    // The input should be initialized with the search prop
+    expect(screen.getByRole("textbox")).toHaveValue("test search")
+  })
+
+  // Mock useAppDispatch for the dispatch test
+  it("saves scrolled games to Redux store", async () => {
+    // Create a spy on the store's dispatch method
+    const dispatchSpy = jest.spyOn(mockStore, "dispatch")
+
+    renderWithProviders(
+      <Lobby search="" gamesRepository={gamesRepositoryMock} />
+    )
+
+    // Wait for the useEffect to dispatch the action
+    await waitFor(() => {
+      expect(dispatchSpy).toHaveBeenCalled()
+    })
+
+    // Clean up
+    dispatchSpy.mockRestore()
   })
 })
