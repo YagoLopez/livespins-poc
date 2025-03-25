@@ -11,7 +11,7 @@ export const scrolledGamesSlice = createSlice({
   reducers: {
     saveScrolledGames: (
       state,
-      action: PayloadAction<InfiniteData<IGame[]>>
+      action: PayloadAction<InfiniteData<IGame[]> | null>
     ) => {
       state = action.payload
       return state

@@ -1,7 +1,7 @@
 import { IRepository } from "../interfaces/IRepository"
 import { IGame } from "../interfaces/IGame"
-import { ISearchParam } from "../interfaces/ISearchParam"
 import { Singleton } from "../utils/singleton"
+import { ISearchParam } from "../interfaces/ISearchParam"
 
 @Singleton
 export class GamesRepositoryMock implements IRepository<IGame> {
@@ -18,7 +18,7 @@ export class GamesRepositoryMock implements IRepository<IGame> {
     }
   }
 
-  search(): Promise<any> {
+  search({ searchString, pageParam }: ISearchParam): Promise<any> {
     return Promise.resolve({
       page: 1,
       per_page: 10,
